@@ -29,3 +29,11 @@ tower = "=0.3.0-alpha.2"
 
 [build-dependencies]
 tonic-build = { git = "https://github.com/blittable/tonic" }
+
+[features]
+default = ["transport", "rustfmt"]
+rustfmt = []
+transport = []
+
+[package.metadata.docs.rs]
+all-features = true
