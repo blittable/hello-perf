@@ -1,0 +1,31 @@
+[package]
+name = "hello-perf"
+version = "0.1.0"
+authors = ["blittable <blittable-bits@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "helloperf-server"
+path = "src/helloperf/server.rs"
+
+[[bin]]
+name = "helloperf-client"
+path = "src/helloperf/client.rs"
+
+[dependencies]
+tonic = { git = "https://github.com/blittable/tonic" }
+bytes = "0.4"
+prost = "0.5"
+
+
+tokio = "=0.2.0-alpha.6"
+futures-preview = { version = "=0.3.0-alpha.19", default-features = false, features = ["alloc"]}
+async-stream = "0.1.2"
+http = "0.1"
+tower = "=0.3.0-alpha.2"
+
+
+
+[build-dependencies]
+tonic-build = { git = "https://github.com/blittable/tonic" }
